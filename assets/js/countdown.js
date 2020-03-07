@@ -1,8 +1,9 @@
 // Set the date we're counting down to
-var vibescountDownDate = new Date("Mar 8, 2020 00:00:00").getTime();
+// var vibescountDownDate = new Date("Mar 8, 2020 00:00:00").getTime();
 var emotionscountDownDate = new Date("Mar 15, 2020 00:00:00").getTime();
 
 // Update the count down every 1 second
+/* IGNORING VIBE COUNT DOWN
 var x = setInterval(function() {
 
   // Get today's date and time
@@ -27,6 +28,8 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+*/
 
 var y = setInterval(function() {
 
