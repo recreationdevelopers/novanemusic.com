@@ -1,6 +1,6 @@
 // Set the date we're counting down to
 // var vibescountDownDate = new Date("Mar 8, 2020 00:00:00").getTime();
-var emotionscountDownDate = new Date("Mar 22, 2020 00:00:00").getTime();
+var emotionscountDownDate = new Date("Jul 11, 2020 00:00:00").getTime();
 
 // Update the count down every 1 second
 /* IGNORING VIBE COUNT DOWN
@@ -44,14 +44,19 @@ var y = setInterval(function() {
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("emotionscountdown").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
+   
+  if (distance > 0) {
+    // Output the result in an element with id="demo"
+    document.getElementById("emotionscountdown").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+  }
+
   // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+  else if (distance <= 0) {
+    // clearInterval(x);
+    document.getElementById("emotionsrelease").style.removeProperty('display');
+    document.getElementById("emotionsAlbumArt").style.removeProperty('filter');
+    document.getElementById("emotionsInfo").style.removeProperty('filter');
+    document.getElementById("emotionscountdown").style.display = "none";
   }
 }, 1000);
